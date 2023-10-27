@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black_10">#171717</color>
+    <color name="black_20">#1E1E1E</color>
+    <color name="white_10">#f0e6e6</color>
+    <color name="white_20">#DDDBDB</color>
+    <color name="water_10">#1D5A91</color>
+    <color name="fish_10">#C64B16</color>
+    <color name="red_10">#912B1D</color>
+    <color name="green_10">#1D9137</color>
+</resources>

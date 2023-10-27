@@ -1,0 +1,12 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SmartFishbowl" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:colorBackground">@color/black_10</item>
+        <item name="android:textColor">@color/white_10</item>
+        <item name="sub_backgroundColor">@color/black_20</item>
+        <item name="main_backgroundColor">@color/black_10</item>
+    </style>
+    <style name="Theme.SmartFishbowl" parent="Base.Theme.SmartFishbowl" />
+</resources>

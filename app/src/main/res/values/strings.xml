@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Smart <font color="#1D5A91">Fishbowl</font></string>
+    <!-- Tank Status -->
+    <string name="tank_err">Tank is <font color="#DA4747"><b>Not Connected</b></font></string>
+    <string name="tank_okay">Tank is <font color="#4ADA47"><b>Okay</b></font></string>
+    <string name="tank_empty">Tank is <font color="#DA4747"><b>Empty</b></font></string>
+    <string name="tank_cleaning">Tank is <font color="#D7DA47"><b>Cleaning…</b></font></string>
+    <!-- Tank description -->
+    <string name="tank_desc_fish_eating">"Fishes are being feed…"</string>
+    <string name="tank_desc_err">"TODO: Add solution instructions"</string>
+</resources>
