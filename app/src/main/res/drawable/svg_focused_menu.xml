@@ -5,12 +5,8 @@
             <solid android:color="@color/water_10" />
             <corners android:radius="25dp" />
             <size
-                android:width="68dp"
-                android:height="24dp" />
+                android:width="86dp"
+                android:height="32dp" />
         </shape>
     </item>
-    <item
-        android:width="24dp"
-        android:drawable="@drawable/settings_48px"
-        android:gravity="center" />
 </layer-list>

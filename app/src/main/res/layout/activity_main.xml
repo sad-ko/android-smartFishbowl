@@ -22,13 +22,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/roboto_mono"
+            android:fontFamily="@font/roboto_mono_medium"
             android:paddingTop="30dp"
             android:text="@string/app_name"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textSize="34sp"
-            android:textStyle="bold" />
+            android:textStyle="normal" />
 
         <TextView
             android:id="@+id/tankStatus"
@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:contentDescription="TankVector"
-            app:srcCompat="@drawable/tank_full"
+            app:srcCompat="@drawable/tank_okay"
             tools:ignore="HardcodedText" />
 
         <Space
@@ -81,11 +81,11 @@
             android:orientation="vertical">
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_nav"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/nav_background_curved"
                 android:gravity="center|bottom"
-                android:id="@+id/bottom_nav"
                 tools:ignore="VisualLintBottomNav">
 
                 <LinearLayout
@@ -96,26 +96,29 @@
 
                     <FrameLayout
                         android:id="@+id/configFrame"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center">
+                        android:layout_gravity="center"
+                        tools:ignore="UselessParent">
 
                         <ImageButton
                             android:id="@+id/configButton"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            android:background="#001D5A91"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/white_30"
                             android:contentDescription="ConfigButton"
-                            android:padding="10dp"
-                            app:srcCompat="@drawable/settings_48px"
+                            app:srcCompat="@drawable/svg_settings_24px"
                             tools:ignore="HardcodedText" />
 
                         <TextView
                             android:id="@+id/configButtonTitle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="20dp"
+                            android:layout_gravity="center|bottom|start"
+                            android:layout_marginStart="28dp"
+                            android:layout_marginBottom="10dp"
                             android:fontFamily="@font/roboto_mono"
                             android:text="Config"
                             android:textAllCaps="false"
@@ -123,62 +126,59 @@
                             android:textStyle="normal"
                             tools:ignore="HardcodedText" />
 
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:id="@+id/homeFrame"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:paddingHorizontal="40dp">
+                        <ImageView
+                            android:id="@+id/focused"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="5dp"
+                            android:contentDescription="Focused"
+                            app:srcCompat="@drawable/svg_focused_menu"
+                            tools:ignore="HardcodedText" />
 
                         <ImageButton
-                            android:id="@+id/homeButton"
-                            android:layout_width="wrap_content"
+                            android:id="@+id/homeView"
+                            android:layout_width="60dp"
                             android:layout_height="60dp"
-                            android:background="#001D5A91"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/white_30"
                             android:contentDescription="HomeButton"
-                            android:padding="10dp"
-                            app:srcCompat="@drawable/home_focused"
+                            app:srcCompat="@drawable/svg_home_24px"
                             tools:ignore="HardcodedText" />
 
                         <TextView
                             android:id="@+id/homeButtonTitle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="20dp"
-                            android:fontFamily="@font/roboto_mono"
+                            android:layout_gravity="center|bottom"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/roboto_mono_medium"
                             android:text="Home"
                             android:textAllCaps="false"
                             android:textSize="12sp"
-                            android:textStyle="normal|bold"
+                            android:textStyle="bold"
                             tools:ignore="HardcodedText" />
-
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:id="@+id/actionsFrame"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center">
 
                         <ImageButton
                             android:id="@+id/actionsButton"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            android:background="#001D5A91"
-                            android:contentDescription="ActionsButton"
-                            android:padding="10dp"
-                            app:srcCompat="@drawable/play_arrow_48px"
+                            android:layout_gravity="center_vertical|end"
+                            android:layout_marginEnd="35dp"
+                            android:layout_marginBottom="4dp"
+                            android:background="@color/white_30"
+                            android:contentDescription="ActionsView"
+                            app:srcCompat="@drawable/svg_actions_24px"
                             tools:ignore="HardcodedText" />
 
                         <TextView
                             android:id="@+id/actionsButtonTitle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="20dp"
+                            android:layout_gravity="center|bottom|end"
+                            android:layout_marginEnd="38dp"
+                            android:layout_marginBottom="10dp"
                             android:fontFamily="@font/roboto_mono"
                             android:text="Actions"
                             android:textAllCaps="false"

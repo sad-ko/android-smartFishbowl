@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white_10" />
+            <size
+                android:width="232dp"
+                android:height="146dp" />
+        </shape>
+    </item>
+    <item android:gravity="bottom">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/water_10" />
+            <size
+                android:width="232dp"
+                android:height="120dp" />
+        </shape>
+    </item>
+    <!-- Fishes -->
+    <item
+        android:drawable="@drawable/svg_fish"
+        android:gravity="center"
+        android:right="150dp"
+        android:top="10dp" />
+    <item
+        android:gravity="center"
+        android:left="150dp"
+        android:top="60dp">
+        <rotate
+            android:drawable="@drawable/svg_fish"
+            android:fromDegrees="180.0"
+            android:pivotX="50%"
+            android:pivotY="50%"
+            android:toDegrees="180.0" />
+    </item>
+    <!-- Food -->
+    <item android:gravity="center"
+        android:right="200dp"
+        android:bottom="5dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/food_10" />
+            <size
+                android:width="5dp"
+                android:height="5dp" />
+        </shape>
+    </item>
+    <item android:gravity="center"
+        android:right="220dp"
+        android:bottom="30dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/food_10" />
+            <size
+                android:width="5dp"
+                android:height="5dp" />
+        </shape>
+    </item>
+    <item android:gravity="center"
+        android:right="195dp"
+        android:bottom="50dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/food_10" />
+            <size
+                android:width="5dp"
+                android:height="5dp" />
+        </shape>
+    </item>
+    <item android:gravity="center"
+        android:right="215dp"
+        android:bottom="70dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/food_10" />
+            <size
+                android:width="5dp"
+                android:height="5dp" />
+        </shape>
+    </item>
+
+    <item android:gravity="center"
+        android:left="200dp"
+        android:bottom="0dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/food_10" />
+            <size
+                android:width="5dp"
+                android:height="5dp" />
+        </shape>
+    </item>
+    <item android:gravity="center"
+        android:left="220dp"
+        android:bottom="22dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/food_10" />
+            <size
+                android:width="5dp"
+                android:height="5dp" />
+        </shape>
+    </item>
+    <item android:gravity="center"
+        android:left="190dp"
+        android:bottom="40dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/food_10" />
+            <size
+                android:width="5dp"
+                android:height="5dp" />
+        </shape>
+    </item>
+    <item android:gravity="center"
+        android:left="209dp"
+        android:bottom="65dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/food_10" />
+            <size
+                android:width="5dp"
+                android:height="5dp" />
+        </shape>
+    </item>
+    <item android:gravity="center"
+        android:left="215dp"
+        android:bottom="-25dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/food_10" />
+            <size
+                android:width="5dp"
+                android:height="5dp" />
+        </shape>
+    </item>
+    <item android:gravity="center"
+        android:left="200dp"
+        android:bottom="-50dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/food_10" />
+            <size
+                android:width="5dp"
+                android:height="5dp" />
+        </shape>
+    </item>
+
+</layer-list>

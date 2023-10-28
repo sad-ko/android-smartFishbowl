@@ -22,20 +22,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/kumbh_sans_bold"
+            android:fontFamily="@font/roboto_mono_medium"
             android:paddingTop="30dp"
             android:text="Actions"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textSize="34sp"
-            android:textStyle="normal" />
+            android:textStyle="normal"
+            tools:ignore="HardcodedText" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:gravity="center_horizontal|center_vertical"
             android:orientation="vertical"
-            android:layout_weight="1"
             android:paddingVertical="20dp">
 
             <Button
@@ -48,7 +49,8 @@
                 android:gravity="center"
                 android:text="Feed Fishes"
                 android:textColor="@color/white_10"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                tools:ignore="HardcodedText" />
 
             <Space
                 android:layout_width="match_parent"
@@ -64,7 +66,8 @@
                 android:gravity="center"
                 android:text="Clean Tank"
                 android:textColor="@color/white_10"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                tools:ignore="HardcodedText" />
 
             <Space
                 android:layout_width="match_parent"
@@ -80,7 +83,8 @@
                 android:gravity="center"
                 android:text="Switch Lights"
                 android:textColor="@color/white_10"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                tools:ignore="HardcodedText" />
 
         </LinearLayout>
 
@@ -106,94 +110,95 @@
 
                     <FrameLayout
                         android:id="@+id/configFrame"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center">
+                        android:layout_gravity="center"
+                        tools:ignore="UselessParent">
 
                         <ImageButton
                             android:id="@+id/configButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="4dp"
                             android:background="#001D5A91"
                             android:contentDescription="ConfigButton"
-                            android:padding="10dp"
-                            app:srcCompat="@drawable/settings_48px"
+                            app:srcCompat="@drawable/svg_settings_24px"
                             tools:ignore="HardcodedText" />
 
                         <TextView
                             android:id="@+id/configButtonTitle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="30dp"
-                            android:fontFamily="@font/kumbh_sans"
+                            android:layout_gravity="center|bottom|start"
+                            android:layout_marginStart="28dp"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/roboto_mono"
                             android:text="Config"
                             android:textAllCaps="false"
-                            android:textSize="14sp"
+                            android:textSize="12sp"
                             android:textStyle="normal"
                             tools:ignore="HardcodedText" />
 
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:id="@+id/homeFrame"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:paddingHorizontal="40dp">
+                        <ImageView
+                            android:id="@+id/focused"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|end"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:contentDescription="Focused"
+                            app:srcCompat="@drawable/svg_focused_menu"
+                            tools:ignore="HardcodedText" />
 
                         <ImageButton
                             android:id="@+id/homeButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="4dp"
                             android:background="#001D5A91"
                             android:contentDescription="HomeButton"
-                            android:padding="10dp"
-                            app:srcCompat="@drawable/home_48px"
+                            app:srcCompat="@drawable/svg_home_24px"
                             tools:ignore="HardcodedText" />
 
                         <TextView
                             android:id="@+id/homeButtonTitle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="30dp"
-                            android:fontFamily="@font/kumbh_sans"
+                            android:layout_gravity="center|bottom"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/roboto_mono"
                             android:text="Home"
                             android:textAllCaps="false"
-                            android:textSize="14sp"
+                            android:textSize="12sp"
                             android:textStyle="normal"
                             tools:ignore="HardcodedText" />
 
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:id="@+id/actionsFrame"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center">
-
                         <ImageButton
-                            android:id="@+id/actionsButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:id="@+id/actionsSVG"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center_vertical|end"
+                            android:layout_marginEnd="35dp"
+                            android:layout_marginBottom="4dp"
                             android:background="#001D5A91"
-                            android:contentDescription="ActionsButton"
-                            android:padding="10dp"
-                            app:srcCompat="@drawable/actions_focused"
+                            android:contentDescription="ActionsView"
+                            app:srcCompat="@drawable/svg_actions_24px"
                             tools:ignore="HardcodedText" />
 
                         <TextView
                             android:id="@+id/actionsButtonTitle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="30dp"
-                            android:fontFamily="@font/kumbh_sans_bold"
+                            android:layout_gravity="center|bottom|end"
+                            android:layout_marginEnd="38dp"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/roboto_mono_medium"
                             android:text="Actions"
                             android:textAllCaps="false"
-                            android:textSize="14sp"
-                            android:textStyle="normal"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
                             tools:ignore="HardcodedText" />
 
                     </FrameLayout>

@@ -16,8 +16,18 @@
                 android:height="120dp" />
         </shape>
     </item>
+    <item android:height="120dp" android:gravity="bottom">
+        <shape>
+            <gradient
+                android:startColor="@android:color/transparent"
+                android:endColor="@android:color/transparent"
+                android:centerColor="#7505d5fa"
+                android:gradientRadius="225dp"
+                android:type="radial"/>
+        </shape>
+    </item>
     <item
-        android:drawable="@drawable/fish"
+        android:drawable="@drawable/svg_fish"
         android:gravity="center"
         android:right="150dp"
         android:top="10dp" />
@@ -26,7 +36,7 @@
         android:left="150dp"
         android:top="60dp">
         <rotate
-            android:drawable="@drawable/fish"
+            android:drawable="@drawable/svg_fish"
             android:fromDegrees="180.0"
             android:pivotX="50%"
             android:pivotY="50%"

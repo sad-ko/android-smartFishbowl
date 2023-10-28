@@ -13,20 +13,20 @@
             <solid android:color="@color/water_10" />
             <size
                 android:width="232dp"
-                android:height="120dp" />
+                android:height="40dp" />
         </shape>
     </item>
     <item
-        android:top="10dp"
-        android:drawable="@drawable/fish"
-        android:gravity="center"
-        android:right="150dp" />
+        android:drawable="@drawable/svg_fish"
+        android:gravity="center|bottom"
+        android:right="150dp"
+        android:bottom="10dp" />
     <item
-        android:gravity="center"
+        android:gravity="center|bottom"
         android:left="150dp"
-        android:top="60dp">
+        android:bottom="10dp">
         <rotate
-            android:drawable="@drawable/fish"
+            android:drawable="@drawable/svg_fish"
             android:fromDegrees="180.0"
             android:pivotX="50%"
             android:pivotY="50%"

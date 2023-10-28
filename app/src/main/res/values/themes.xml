@@ -7,6 +7,8 @@
         <item name="android:textColor">@color/white_10</item>
         <item name="sub_backgroundColor">@color/black_20</item>
         <item name="main_backgroundColor">@color/black_10</item>
+        <item name="android:windowAnimationStyle">@null</item>
     </style>
+
     <style name="Theme.SmartFishbowl" parent="Base.Theme.SmartFishbowl" />
 </resources>
