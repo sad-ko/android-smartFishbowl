@@ -49,22 +49,19 @@ public class MainActivity<MqttMessage> extends AppCompatActivity
 
     mqttHandler = new MqttHandler(getApplicationContext());
     mqttHandler.connect(BROKER_URL, CLIENT_ID);
-
-    // MqttMessage mqttMessage = new MqttMessage(message.getBytes());
+   // subscribeToTopic("/v2.0/devices/android-smart-fishbowl/send-event");
+    subscribeToTopic("/v2.0/devices/esp32-smart-fishbowl/send-state");
     // client.publish("/v2.0/devices/android-smart-fishbowl/send-event", mqttMessage);
-    publishMessage("/v2.0/devices/android-smart-fishbowl/send-event", "7");
-    subscribeToTopic("/v2.0/devices/android-smart-fishbowl/send-event");
+    mqttHandler.publishMessage("/v2.0/devices/android-smart-fishbowl/send-event", 9);
     // publishMessage("/v2.0/devices/android-smart-fishbowl/send-event",mqttMessage);
 
-    //communicationMqtt();
-    //pruebamqtt();
   }
 
-  private void publishMessage(String topic, String message)
-  {
-    Toast.makeText(this, "Publishing message: " + message, Toast.LENGTH_SHORT).show();
-    mqttHandler.publish(topic, message);
-  }
+ // private void publishMessagetest(String topic, String message)
+  //{
+    //Toast.makeText(this, "Publishing message: " + message, Toast.LENGTH_SHORT).show();
+    //mqttHandler.publish(topic, message);
+  //}
 
   private void subscribeToTopic(String topic)
   {
@@ -74,7 +71,6 @@ public class MainActivity<MqttMessage> extends AppCompatActivity
 
   public void communicationMqtt()
   {
-    //mqttToQueue = new LinkedList<>();
     LinkedBlockingQueue<Integer> queueToMqtt = new LinkedBlockingQueue<>(5);
     boolean success = queueToMqtt.offer(1);
   }

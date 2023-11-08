@@ -2,6 +2,7 @@ package com.example.smartfishbowl;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
@@ -12,11 +13,20 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MqttHandler implements MqttCallback
 {
-  private MqttClient client;
+  private static MqttClient client;
   private final Context mContext;
 
+  private List<String> events = new ArrayList<String>();
+
+  public List<String> getEvents()
+  {
+    return this.events;
+  }
   public MqttHandler(Context mContext)
   {
     this.mContext = mContext;
@@ -66,6 +76,7 @@ public class MqttHandler implements MqttCallback
     JSONObject json = new JSONObject(message.toString());
     //Float valor = Float.parseFloat(json.getString("value"));
     Log.i("Ubidots", msgJson);
+    this.events.add(msgJson);
   }
 
   @Override
@@ -85,12 +96,19 @@ public class MqttHandler implements MqttCallback
     }
   }
 
-  public void publish(String topic, String message)
+  public void publishMessage(String topic, Integer message)
+  {
+
+    Toast.makeText(mContext, "Publishing message: " + message, Toast.LENGTH_SHORT).show();
+    this.publish(topic, message);
+  }
+
+  public void publish(String topic, Integer message)
   {
     try
     {
-      MqttMessage mqttMessage = new MqttMessage(message.getBytes());
-      mqttMessage.setQos(2);
+      MqttMessage mqttMessage = new MqttMessage(message.toString().getBytes());
+      mqttMessage.setQos(0);
       client.publish(topic, mqttMessage);
     } catch (MqttException e)
     {
