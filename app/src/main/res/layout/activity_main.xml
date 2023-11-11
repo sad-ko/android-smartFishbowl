@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="soa.project.smartfishbowl.activities.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,11 +48,12 @@
             android:layout_height="20dp" />
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
+            android:id="@+id/tankView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/tank_okay"
             android:contentDescription="TankVector"
-            app:srcCompat="@drawable/tank_okay"
             tools:ignore="HardcodedText" />
 
         <Space
@@ -71,7 +72,7 @@
             android:textAllCaps="false"
             android:textSize="20sp"
             android:textStyle="normal"
-            android:visibility="invisible" />
+            android:visibility="visible" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -136,55 +137,91 @@
                             app:srcCompat="@drawable/svg_focused_menu"
                             tools:ignore="HardcodedText" />
 
-                        <ImageButton
-                            android:id="@+id/homeView"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="4dp"
-                            android:background="@color/white_30"
-                            android:contentDescription="HomeButton"
-                            app:srcCompat="@drawable/svg_home_24px"
-                            tools:ignore="HardcodedText" />
-
-                        <TextView
-                            android:id="@+id/homeButtonTitle"
+                        <FrameLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center|bottom"
-                            android:layout_marginBottom="10dp"
-                            android:fontFamily="@font/roboto_mono_medium"
-                            android:text="Home"
-                            android:textAllCaps="false"
-                            android:textSize="12sp"
-                            android:textStyle="bold"
-                            tools:ignore="HardcodedText" />
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginHorizontal="33dp"
+                            android:orientation="vertical">
 
-                        <ImageButton
-                            android:id="@+id/actionsButton"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_gravity="center_vertical|end"
-                            android:layout_marginEnd="35dp"
-                            android:layout_marginBottom="4dp"
-                            android:background="@color/white_30"
-                            android:contentDescription="ActionsView"
-                            app:srcCompat="@drawable/svg_actions_24px"
-                            tools:ignore="HardcodedText" />
+                            <ImageView
+                                android:id="@+id/homeImage"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|top"
+                                android:layout_marginTop="23dp"
+                                android:contentDescription="HomeImage"
+                                app:srcCompat="@drawable/svg_home_24px"
+                                tools:ignore="HardcodedText" />
 
-                        <TextView
-                            android:id="@+id/actionsButtonTitle"
+                            <TextView
+                                android:id="@+id/homeTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|bottom"
+                                android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/roboto_mono_medium"
+                                android:text="Home"
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText,VisualLintOverlap" />
+
+                            <Button
+                                android:id="@+id/homeButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|top"
+                                android:layout_marginTop="10dp"
+                                android:background="?selectableItemBackgroundBorderless"
+                                android:contentDescription="HomeButton"
+                                tools:ignore="HardcodedText" />
+
+                        </FrameLayout>
+
+                        <FrameLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center|bottom|end"
-                            android:layout_marginEnd="38dp"
-                            android:layout_marginBottom="10dp"
-                            android:fontFamily="@font/roboto_mono"
-                            android:text="Actions"
-                            android:textAllCaps="false"
-                            android:textSize="12sp"
-                            android:textStyle="normal"
-                            tools:ignore="HardcodedText" />
+                            android:layout_height="match_parent"
+                            android:layout_gravity="end"
+                            android:layout_marginHorizontal="33dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/actionsImage"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|top"
+                                android:layout_marginTop="23dp"
+                                android:contentDescription="ActionsImage"
+                                app:srcCompat="@drawable/svg_actions_24px"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/actionsTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|bottom"
+                                android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/roboto_mono"
+                                android:text="Actions"
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textSize="12sp"
+                                android:textStyle="normal"
+                                tools:ignore="HardcodedText,VisualLintOverlap" />
+
+                            <Button
+                                android:id="@+id/actionsButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|top"
+                                android:layout_marginTop="10dp"
+                                android:background="?selectableItemBackgroundBorderless"
+                                android:contentDescription="ActionsButton"
+                                tools:ignore="HardcodedText" />
+
+                        </FrameLayout>
 
                     </FrameLayout>
 

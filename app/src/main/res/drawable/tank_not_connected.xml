@@ -9,8 +9,8 @@
         </shape>
     </item>
     <item
-        android:drawable="@drawable/svg_wifi_off_24px"
-        android:gravity="center"
         android:width="64dp"
-        android:height="64dp"/>
+        android:height="64dp"
+        android:drawable="@drawable/svg_wifi_off_24px"
+        android:gravity="center" />
 </layer-list>

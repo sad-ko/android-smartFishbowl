@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.smartfishbowl"
+    namespace = "soa.project.smartfishbowl"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.smartfishbowl"
+        applicationId = "soa.project.smartfishbowl"
         minSdk = 29
         targetSdk = 33
         versionCode = 1
@@ -26,8 +26,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
 

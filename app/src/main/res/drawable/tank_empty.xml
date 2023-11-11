@@ -17,14 +17,14 @@
         </shape>
     </item>
     <item
+        android:bottom="10dp"
         android:drawable="@drawable/svg_fish"
         android:gravity="center|bottom"
-        android:right="150dp"
-        android:bottom="10dp" />
+        android:right="150dp" />
     <item
+        android:bottom="10dp"
         android:gravity="center|bottom"
-        android:left="150dp"
-        android:bottom="10dp">
+        android:left="150dp">
         <rotate
             android:drawable="@drawable/svg_fish"
             android:fromDegrees="180.0"

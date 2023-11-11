@@ -6,6 +6,13 @@
     <string name="tank_empty">Tank is <font color="#DA4747"><b>Empty</b></font></string>
     <string name="tank_cleaning">Tank is <font color="#D7DA47"><b>Cleaning…</b></font></string>
     <!-- Tank description -->
-    <string name="tank_desc_fish_eating">"Fishes are being feed…"</string>
-    <string name="tank_desc_err">"TODO: Add solution instructions"</string>
+    <string name="tank_desc_fish_eating">Fishes are being feed</string>
+    <string name="tank_desc_err">Please connect to Internet</string>
+    <string name="tank_desc_night">Night mode</string>
+    <string name="tank_desc_manual">Manual mode</string>
+    <string name="desc_empty"/>
+    <!-- Actions description -->
+    <string name="action_feeder">Starting feeder…</string>
+    <string name="action_cleaner">Starting pump…</string>
+    <string name="action_lights">Switching lights…</string>
 </resources>

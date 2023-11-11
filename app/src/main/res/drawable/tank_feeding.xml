@@ -34,9 +34,10 @@
             android:toDegrees="180.0" />
     </item>
     <!-- Food -->
-    <item android:gravity="center"
-        android:right="200dp"
-        android:bottom="5dp">
+    <item
+        android:bottom="5dp"
+        android:gravity="center"
+        android:right="200dp">
         <shape android:shape="oval">
             <solid android:color="@color/food_10" />
             <size
@@ -44,9 +45,10 @@
                 android:height="5dp" />
         </shape>
     </item>
-    <item android:gravity="center"
-        android:right="220dp"
-        android:bottom="30dp">
+    <item
+        android:bottom="30dp"
+        android:gravity="center"
+        android:right="220dp">
         <shape android:shape="oval">
             <solid android:color="@color/food_10" />
             <size
@@ -54,9 +56,10 @@
                 android:height="5dp" />
         </shape>
     </item>
-    <item android:gravity="center"
-        android:right="195dp"
-        android:bottom="50dp">
+    <item
+        android:bottom="50dp"
+        android:gravity="center"
+        android:right="195dp">
         <shape android:shape="oval">
             <solid android:color="@color/food_10" />
             <size
@@ -64,9 +67,10 @@
                 android:height="5dp" />
         </shape>
     </item>
-    <item android:gravity="center"
-        android:right="215dp"
-        android:bottom="70dp">
+    <item
+        android:bottom="70dp"
+        android:gravity="center"
+        android:right="215dp">
         <shape android:shape="oval">
             <solid android:color="@color/food_10" />
             <size
@@ -75,9 +79,10 @@
         </shape>
     </item>
 
-    <item android:gravity="center"
-        android:left="200dp"
-        android:bottom="0dp">
+    <item
+        android:bottom="0dp"
+        android:gravity="center"
+        android:left="200dp">
         <shape android:shape="oval">
             <solid android:color="@color/food_10" />
             <size
@@ -85,9 +90,10 @@
                 android:height="5dp" />
         </shape>
     </item>
-    <item android:gravity="center"
-        android:left="220dp"
-        android:bottom="22dp">
+    <item
+        android:bottom="22dp"
+        android:gravity="center"
+        android:left="220dp">
         <shape android:shape="oval">
             <solid android:color="@color/food_10" />
             <size
@@ -95,9 +101,10 @@
                 android:height="5dp" />
         </shape>
     </item>
-    <item android:gravity="center"
-        android:left="190dp"
-        android:bottom="40dp">
+    <item
+        android:bottom="40dp"
+        android:gravity="center"
+        android:left="190dp">
         <shape android:shape="oval">
             <solid android:color="@color/food_10" />
             <size
@@ -105,9 +112,10 @@
                 android:height="5dp" />
         </shape>
     </item>
-    <item android:gravity="center"
-        android:left="209dp"
-        android:bottom="65dp">
+    <item
+        android:bottom="65dp"
+        android:gravity="center"
+        android:left="209dp">
         <shape android:shape="oval">
             <solid android:color="@color/food_10" />
             <size
@@ -115,9 +123,10 @@
                 android:height="5dp" />
         </shape>
     </item>
-    <item android:gravity="center"
-        android:left="215dp"
-        android:bottom="-25dp">
+    <item
+        android:bottom="-25dp"
+        android:gravity="center"
+        android:left="215dp">
         <shape android:shape="oval">
             <solid android:color="@color/food_10" />
             <size
@@ -125,9 +134,10 @@
                 android:height="5dp" />
         </shape>
     </item>
-    <item android:gravity="center"
-        android:left="200dp"
-        android:bottom="-50dp">
+    <item
+        android:bottom="-50dp"
+        android:gravity="center"
+        android:left="200dp">
         <shape android:shape="oval">
             <solid android:color="@color/food_10" />
             <size

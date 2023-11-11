@@ -16,14 +16,16 @@
                 android:height="120dp" />
         </shape>
     </item>
-    <item android:height="120dp" android:gravity="bottom">
+    <item
+        android:height="120dp"
+        android:gravity="bottom">
         <shape>
             <gradient
-                android:startColor="@android:color/transparent"
-                android:endColor="@android:color/transparent"
                 android:centerColor="#7505d5fa"
+                android:endColor="@android:color/transparent"
                 android:gradientRadius="225dp"
-                android:type="radial"/>
+                android:startColor="@android:color/transparent"
+                android:type="radial" />
         </shape>
     </item>
     <item
