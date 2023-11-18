@@ -31,6 +31,8 @@
             android:textStyle="normal"
             tools:ignore="HardcodedText" />
 
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -118,7 +120,7 @@
                         <ImageButton
                             android:id="@+id/configButton"
                             android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_height="56dp"
                             android:layout_marginStart="20dp"
                             android:layout_marginTop="4dp"
                             android:background="#001D5A91"
@@ -134,7 +136,7 @@
                             android:layout_marginStart="28dp"
                             android:layout_marginBottom="10dp"
                             android:fontFamily="@font/roboto_mono"
-                            android:text="Config"
+                            android:text="Notif"
                             android:textAllCaps="false"
                             android:textSize="12sp"
                             android:textStyle="normal"
