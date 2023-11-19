@@ -19,8 +19,6 @@ public class NotificationsActivity extends AppCompatActivity {
   private Handler handler = new Handler();
   private TextView textViewDatos;
 
-  private StringBuilder datosAcumulados = new StringBuilder();
-
   private ScrollView scrollView;
 
   private MqttHandler mqttHandler;
@@ -78,11 +76,9 @@ public class NotificationsActivity extends AppCompatActivity {
     @Override
     public void run() {
       try {
-        // Acumula los nuevos datos
-        datosAcumulados.append(obtenerNuevosDatos());
 
-        // Actualiza el TextView con los datos acumulados
-        textViewDatos.setText(datosAcumulados.toString());
+        // Actualiza el TextView
+        textViewDatos.setText(String.join("\n", mqttHandler.getEvents()));
 
         // Desplaza automáticamente hacia abajo
         scrollView.post(new Runnable() {
@@ -99,12 +95,6 @@ public class NotificationsActivity extends AppCompatActivity {
     }
 
   };
-
-  private List<String> obtenerNuevosDatos() {
-    // Lógica para obtener nuevos datos
-
-    return mqttHandler.getEvents();
-  }
 
   @Override
   protected void onDestroy() {
