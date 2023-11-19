@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Smart <font color="#1D5A91">Fishbowl</font></string>
+    <string name="actions">Actions</string>
+    <string name="notif">Notifications</string>
     <!-- Tank Status -->
     <string name="tank_err">Tank is <font color="#DA4747"><b>Not Connected</b></font></string>
     <string name="tank_okay">Tank is <font color="#4ADA47"><b>Okay</b></font></string>
@@ -10,7 +12,7 @@
     <string name="tank_desc_err">Please connect to Internet</string>
     <string name="tank_desc_night">Night mode</string>
     <string name="tank_desc_manual">Manual mode</string>
-    <string name="desc_empty"/>
+    <string name="desc_empty" />
     <!-- Actions description -->
     <string name="action_feeder">Starting feeder…</string>
     <string name="action_cleaner">Starting pump…</string>

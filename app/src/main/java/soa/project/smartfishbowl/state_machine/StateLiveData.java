@@ -11,15 +11,6 @@ public class StateLiveData
 {
   private static MutableLiveData<States> state;
 
-  public static void setState(Integer value)
-  {
-    if (state == null)
-    {
-      state = new MutableLiveData<>(States.INIT);
-    }
-    state.postValue(States.toEnum(value));
-  }
-
   public static LiveData<States> getState()
   {
     if (state == null)
@@ -27,5 +18,14 @@ public class StateLiveData
       state = new MutableLiveData<>(States.INIT);
     }
     return state;
+  }
+
+  public static void setState(Integer value)
+  {
+    if (state == null)
+    {
+      state = new MutableLiveData<>(States.INIT);
+    }
+    state.postValue(States.toEnum(value));
   }
 }

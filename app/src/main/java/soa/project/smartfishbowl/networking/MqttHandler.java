@@ -25,11 +25,6 @@ public final class MqttHandler implements MqttCallback
   private static MqttAsyncClient client;
   private final List<String> events = new ArrayList<>();
 
-  public List<String> getEvents()
-  {
-    return this.events;
-  }
-
   /**
    * Devuelve una instancia de este singleton.
    */
@@ -49,6 +44,11 @@ public final class MqttHandler implements MqttCallback
       }
       return instance;
     }
+  }
+
+  public List<String> getEvents()
+  {
+    return this.events;
   }
 
   public void connect(String brokerUrl, String clientId)

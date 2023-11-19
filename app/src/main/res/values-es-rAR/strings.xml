@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Smart <font color="#1D5A91">Fishbowl</font></string>
+    <string name="actions">Acciones</string>
+    <string name="notif">Notificaciones</string>
     <!-- Tank Status -->
     <string name="tank_err">La pecera <font color="#DA4747"><b>No esta Conectada</b></font></string>
     <string name="tank_okay">La pecera esta <font color="#4ADA47"><b>Okay</b></font></string>
@@ -11,7 +13,7 @@
     <string name="tank_desc_err">Porfavor, conectese a Internet</string>
     <string name="tank_desc_night">Modo Nocturno</string>
     <string name="tank_desc_manual">Modo Manual</string>
-    <string name="desc_empty"/>
+    <string name="desc_empty" />
     <!-- Actions description -->
     <string name="action_feeder">Iniciando alimentador…</string>
     <string name="action_cleaner">Iniciando bomba…</string>

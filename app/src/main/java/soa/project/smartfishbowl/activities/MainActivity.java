@@ -11,8 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import soa.project.smartfishbowl.R;
 import soa.project.smartfishbowl.networking.MqttHandler;
 import soa.project.smartfishbowl.state_machine.StateLiveData;
-import soa.project.smartfishbowl.state_machine.TankState;
 import soa.project.smartfishbowl.state_machine.States;
+import soa.project.smartfishbowl.state_machine.TankState;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -33,6 +33,14 @@ public class MainActivity extends AppCompatActivity
     findViewById(R.id.actionsButton).setOnClickListener(v ->
     {
       Intent intent = new Intent(MainActivity.this, ActionsActivity.class);
+      // Le dice a la nueva activity desde cual proviene.
+      intent.putExtra("origin", "main");
+      startActivity(intent);
+      finish();
+    });
+    findViewById(R.id.notifButton).setOnClickListener(v ->
+    {
+      Intent intent = new Intent(MainActivity.this, NotificationsActivity.class);
       // Le dice a la nueva activity desde cual proviene.
       intent.putExtra("origin", "main");
       startActivity(intent);
@@ -62,6 +70,11 @@ public class MainActivity extends AppCompatActivity
       {
         findViewById(R.id.focused).startAnimation(
                 AnimationUtils.loadAnimation(this, R.anim.from_action_to_home));
+      }
+      else if (origin != null && origin.equals("notifications"))
+      {
+        findViewById(R.id.focused).startAnimation(
+                AnimationUtils.loadAnimation(this, R.anim.from_notifications_to_home));
       }
     }
 

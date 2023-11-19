@@ -102,31 +102,6 @@
                         android:layout_gravity="center"
                         tools:ignore="UselessParent">
 
-                        <ImageButton
-                            android:id="@+id/configButton"
-                            android:layout_width="60dp"
-                            android:layout_height="56dp"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginTop="4dp"
-                            android:background="@color/white_30"
-                            android:contentDescription="ConfigButton"
-                            app:srcCompat="@drawable/svg_settings_24px"
-                            tools:ignore="HardcodedText" />
-
-                        <TextView
-                            android:id="@+id/configButtonTitle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center|bottom|start"
-                            android:layout_marginStart="28dp"
-                            android:layout_marginBottom="10dp"
-                            android:fontFamily="@font/roboto_mono"
-                            android:text="Notif"
-                            android:textAllCaps="false"
-                            android:textSize="12sp"
-                            android:textStyle="normal"
-                            tools:ignore="HardcodedText" />
-
                         <ImageView
                             android:id="@+id/focused"
                             android:layout_width="wrap_content"
@@ -136,6 +111,49 @@
                             android:contentDescription="Focused"
                             app:srcCompat="@drawable/svg_focused_menu"
                             tools:ignore="HardcodedText" />
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="start"
+                            android:layout_marginHorizontal="33dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/notifImage"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top"
+                                android:layout_marginTop="23dp"
+                                android:contentDescription="NotifImage"
+                                app:srcCompat="@drawable/svg_feedback"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/notifButtonTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|bottom"
+                                android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/roboto_mono"
+                                android:text="Notifications"
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textSize="12sp"
+                                android:textStyle="normal"
+                                tools:ignore="HardcodedText" />
+
+                            <Button
+                                android:id="@+id/notifButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|top"
+                                android:layout_marginTop="10dp"
+                                android:background="?selectableItemBackgroundBorderless"
+                                android:contentDescription="NotifButton"
+                                tools:ignore="HardcodedText" />
+
+                        </FrameLayout>
 
                         <FrameLayout
                             android:layout_width="wrap_content"

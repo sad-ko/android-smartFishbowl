@@ -7,7 +7,6 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.animation.AnimationUtils;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,10 +18,8 @@ import soa.project.smartfishbowl.state_machine.Events;
 public class ActionsActivity extends AppCompatActivity implements SensorEventListener
 {
   private static final String topic = "/v2.0/devices/android-smart-fishbowl/send-event";
+  private final Integer umbral = 12;
   private SensorManager mSensorManager;
-
-  private final Integer umbral = 15;
-
 
   @Override
   protected void onCreate(Bundle savedInstanceState)
@@ -33,8 +30,6 @@ public class ActionsActivity extends AppCompatActivity implements SensorEventLis
     // Accedemos al servicio de sensores
     mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
-
-
     /* -- Activity Transition -- */
     findViewById(R.id.homeButton).setOnClickListener(v ->
     {
@@ -44,19 +39,30 @@ public class ActionsActivity extends AppCompatActivity implements SensorEventLis
       startActivity(intent);
       finish();
     });
+    findViewById(R.id.notifButton).setOnClickListener(v ->
+    {
+      Intent intent = new Intent(ActionsActivity.this, NotificationsActivity.class);
+      // Le dice a la nueva activity desde cual proviene.
+      intent.putExtra("origin", "actions");
+      startActivity(intent);
+      finish();
+    });
   }
-
 
   // Metodo para iniciar el acceso a los sensores
   protected void Ini_Sensores()
   {
-    mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),   SensorManager.SENSOR_DELAY_NORMAL);
+    mSensorManager.registerListener(this,
+            mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+            SensorManager.SENSOR_DELAY_NORMAL
+    );
   }
 
   // Metodo para parar la escucha de los sensores
   private void Parar_Sensores()
   {
-    mSensorManager.unregisterListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER));
+    mSensorManager.unregisterListener(
+            this, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER));
   }
 
   @Override
@@ -65,8 +71,18 @@ public class ActionsActivity extends AppCompatActivity implements SensorEventLis
     super.onStart();
 
     /* -- Animate Transition -- */
-    findViewById(R.id.focused).startAnimation(
-            AnimationUtils.loadAnimation(this, R.anim.from_home_to_action));
+    Bundle bundle = getIntent().getExtras();
+    String origin = bundle.getString("origin");
+    if (origin != null && origin.equals("main"))
+    {
+      findViewById(R.id.focused).startAnimation(
+              AnimationUtils.loadAnimation(this, R.anim.from_home_to_action));
+    }
+    else if (origin != null && origin.equals("notifications"))
+    {
+      findViewById(R.id.focused).startAnimation(
+              AnimationUtils.loadAnimation(this, R.anim.from_notifications_to_actions));
+    }
 
     /* -- Actions Logic -- */
     MqttHandler mqttHandler = MqttHandler.getInstance();
@@ -106,54 +122,52 @@ public class ActionsActivity extends AppCompatActivity implements SensorEventLis
         if ((event.values[0] > umbral) || (event.values[1] > umbral) || (event.values[2] > umbral))
         {
           mqttHandler.publish(topic, Events.SWITCH_LIGHTS.value);
-          Toast.makeText(getApplicationContext(),"Umbral superado por el acelerometro", Toast.LENGTH_LONG).show();
+          Toast.makeText(
+                          getApplicationContext(), "Umbral superado por el acelerometro", Toast.LENGTH_LONG)
+                  .show();
         }
       }
     }
   }
+
   @Override
   protected void onStop()
   {
-
-    Parar_Sensores();
-
     super.onStop();
+    Parar_Sensores();
   }
 
   @Override
   protected void onDestroy()
   {
-    Parar_Sensores();
-
     super.onDestroy();
+    Parar_Sensores();
   }
 
   @Override
   protected void onPause()
   {
-    Parar_Sensores();
-
     super.onPause();
+    Parar_Sensores();
   }
 
   @Override
   protected void onRestart()
   {
-    Ini_Sensores();
-
     super.onRestart();
+    Ini_Sensores();
   }
 
   @Override
   protected void onResume()
   {
     super.onResume();
-
     Ini_Sensores();
   }
 
   @Override
-  public void onAccuracyChanged(Sensor sensor, int i) {
+  public void onAccuracyChanged(Sensor sensor, int i)
+  {
 
   }
 }

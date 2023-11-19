@@ -16,13 +16,7 @@ public enum States
   DRAWING_WATER(5),
   FEEDING_FISHES(6);
 
-  private final int value;
   private static final Map<Integer, States> map = new HashMap<>();
-
-  States(Integer value)
-  {
-    this.value = value;
-  }
 
   static
   {
@@ -30,6 +24,13 @@ public enum States
     {
       map.put(state.value, state);
     }
+  }
+
+  private final int value;
+
+  States(Integer value)
+  {
+    this.value = value;
   }
 
   /**
