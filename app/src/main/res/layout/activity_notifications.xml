@@ -30,10 +30,15 @@
             android:textSize="34sp"
             android:textStyle="normal" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
         <ScrollView
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -53,14 +58,9 @@
                     android:visibility="visible" />
 
 
-
             </LinearLayout>
 
         </ScrollView>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
 
         <Space
             android:layout_width="match_parent"

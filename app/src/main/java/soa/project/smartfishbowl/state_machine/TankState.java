@@ -13,7 +13,8 @@ public class TankState
   /**
    * Mapeo del estado con la interfaz de la pecera correspondiente.
    */
-  private static final Map<States, TankState> stateTable = new HashMap<>(Map.of(States.INIT,
+  private static final Map<States, TankState> stateTable = new HashMap<>(Map.of(
+          States.INIT,
           new TankState(R.drawable.tank_not_connected, R.string.tank_err, R.string.tank_desc_err),
           States.IDLE, new TankState(R.drawable.tank_okay, R.string.tank_okay), States.IDLE_NIGHT,
           new TankState(R.drawable.tank_okay_night, R.string.tank_okay, R.string.tank_desc_night),

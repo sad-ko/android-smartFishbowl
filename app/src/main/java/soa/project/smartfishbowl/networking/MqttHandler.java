@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Locale;
 
 import soa.project.smartfishbowl.state_machine.StateLiveData;
+import soa.project.smartfishbowl.state_machine.States;
 
 /**
  * Singleton para manejar la conexiones de MQTT.
@@ -99,13 +100,13 @@ public final class MqttHandler implements MqttCallback
     String msgJson = message.toString();
     Log.i("Ubidots", "New message: " + msgJson);
 
-    //events.add(msgJson);
-
     try
     {
       // Parseamos el mensaje para obtener el valor (nuevo estado).
       JSONObject json = new JSONObject(msgJson);
       float value = Float.parseFloat(json.getString("value"));
+      StateLiveData.setState((int) value);
+
       // Get the current time in milliseconds
       long currentTimeMillis = System.currentTimeMillis();
 
@@ -113,30 +114,11 @@ public final class MqttHandler implements MqttCallback
       SimpleDateFormat sdf = new SimpleDateFormat("dd-MM HH:mm", Locale.getDefault());
       String formattedTime = sdf.format(new Date(currentTimeMillis));
 
-      // Realiza acciones basadas en el valor
-      switch ((int) value) {
-        case 1:
-          // Valor es 2: Alimentar pecera
-          events.add(formattedTime + " Alimentando peces" );
-          break;
-        case 2:
-          events.add(formattedTime + " Vaciando pecera");
-          break;
-        case 3:
-         events.add(formattedTime + " Tanque lleno");
-          break;
-        case 4:
-          events.add(formattedTime + " Switch lights");
-          break;
-        case 5:
-          events.add(formattedTime + " Agua mínima");
-          break;
-        default:
-          // Otro valor, simplemente agregar el mensaje a la lista
-         // events.add(msgJson);
-          break;
+      States currentState = StateLiveData.getState().getValue();
+      if (currentState != null)
+      {
+        events.add(formattedTime + " " + currentState);
       }
-     // StateLiveData.setState((int) value);
     }
     catch (Exception e)
     {
