@@ -11,8 +11,11 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import soa.project.smartfishbowl.state_machine.StateLiveData;
 
@@ -96,14 +99,44 @@ public final class MqttHandler implements MqttCallback
     String msgJson = message.toString();
     Log.i("Ubidots", "New message: " + msgJson);
 
-    events.add(msgJson);
+    //events.add(msgJson);
 
     try
     {
       // Parseamos el mensaje para obtener el valor (nuevo estado).
-      JSONObject json = new JSONObject(message.toString());
+      JSONObject json = new JSONObject(msgJson);
       float value = Float.parseFloat(json.getString("value"));
-      StateLiveData.setState((int) value);
+      // Get the current time in milliseconds
+      long currentTimeMillis = System.currentTimeMillis();
+
+      // Format the timestamp to a human-readable format (e.g., using SimpleDateFormat)
+      SimpleDateFormat sdf = new SimpleDateFormat("dd-MM HH:mm", Locale.getDefault());
+      String formattedTime = sdf.format(new Date(currentTimeMillis));
+
+      // Realiza acciones basadas en el valor
+      switch ((int) value) {
+        case 1:
+          // Valor es 2: Alimentar pecera
+          events.add(formattedTime + " Alimentando peces" );
+          break;
+        case 2:
+          events.add(formattedTime + " Vaciando pecera");
+          break;
+        case 3:
+         events.add(formattedTime + " Tanque lleno");
+          break;
+        case 4:
+          events.add(formattedTime + " Switch lights");
+          break;
+        case 5:
+          events.add(formattedTime + " Agua mínima");
+          break;
+        default:
+          // Otro valor, simplemente agregar el mensaje a la lista
+         // events.add(msgJson);
+          break;
+      }
+     // StateLiveData.setState((int) value);
     }
     catch (Exception e)
     {

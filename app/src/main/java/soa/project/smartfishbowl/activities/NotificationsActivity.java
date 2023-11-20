@@ -25,6 +25,8 @@ public class NotificationsActivity extends AppCompatActivity {
 
   private static final String topic = "/v2.0/devices/esp32-smart-fishbowl/send-state";
 
+  private static final String BROKER_URL = "tcp://industrial.api.ubidots.com:1883";
+  private static final String CLIENT_ID = "BBFF-VfVWtbeDj6PUpfZmWTcyqCfiqUOTRj";
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -66,8 +68,18 @@ public class NotificationsActivity extends AppCompatActivity {
   @Override
   protected void onStart() {
     super.onStart();
-    MqttHandler mqttHandler = MqttHandler.getInstance();
-    mqttHandler.subscribe(topic);
+    mqttHandler = MqttHandler.getInstance();
+
+    if (!mqttHandler.isConnected())
+    {
+      // Ejecutamos la conexion en otro hilo para no trabar el actual.
+      new Thread(() ->
+      {
+        mqttHandler.connect(BROKER_URL, CLIENT_ID);
+        mqttHandler.subscribe(topic);
+      }).start();
+    }
+    //mqttHandler.subscribe(topic);
 
   }
 
