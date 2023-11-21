@@ -18,4 +18,22 @@
     <string name="action_feeder">Iniciando alimentador…</string>
     <string name="action_cleaner">Iniciando bomba…</string>
     <string name="action_lights">Cambiando luces…</string>
+    <!-- Actions Buttons -->
+    <string name="button_feeder">Alimentar Peces</string>
+    <string name="button_clean">Limpiar Pecera</string>
+    <string name="button_lights">Cambiando Luces</string>
+    <!-- Navigation Buttons -->
+    <string name="nav_notif">Notificaciones</string>
+    <string name="nav_home">Inicio</string>
+    <string name="nav_actions">Acciones</string>
+    <!-- States -->
+    <string name="state_init">Init</string>
+    <string name="state_idle">Normal</string>
+    <string name="state_night">Modo Nocturno</string>
+    <string name="state_manual">Modo Manual</string>
+    <string name="state_low">Bajo en Agua</string>
+    <string name="state_clean">Drenando Agua</string>
+    <string name="state_feed">Alimentando Peces</string>
+    <!-- Toasts -->
+    <string name="sensor">Sensor detectado! Cambiando luces…</string>
 </resources>

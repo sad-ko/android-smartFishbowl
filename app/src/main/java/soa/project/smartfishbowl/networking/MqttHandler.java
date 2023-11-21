@@ -12,13 +12,10 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 
 import soa.project.smartfishbowl.state_machine.StateLiveData;
-import soa.project.smartfishbowl.state_machine.States;
 
 /**
  * Singleton para manejar la conexiones de MQTT.
@@ -27,7 +24,6 @@ public final class MqttHandler implements MqttCallback
 {
   private static volatile MqttHandler instance;
   private static MqttAsyncClient client;
-  private final List<String> events = new ArrayList<>();
 
   /**
    * Devuelve una instancia de este singleton.
@@ -48,11 +44,6 @@ public final class MqttHandler implements MqttCallback
       }
       return instance;
     }
-  }
-
-  public List<String> getEvents()
-  {
-    return this.events;
   }
 
   public void connect(String brokerUrl, String clientId)
@@ -105,20 +96,11 @@ public final class MqttHandler implements MqttCallback
       // Parseamos el mensaje para obtener el valor (nuevo estado).
       JSONObject json = new JSONObject(msgJson);
       float value = Float.parseFloat(json.getString("value"));
-      StateLiveData.setState((int) value);
 
-      // Get the current time in milliseconds
-      long currentTimeMillis = System.currentTimeMillis();
+      SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss - dd/MM/yy", Locale.getDefault());
+      String time = sdf.format(new Date(System.currentTimeMillis()));
 
-      // Format the timestamp to a human-readable format (e.g., using SimpleDateFormat)
-      SimpleDateFormat sdf = new SimpleDateFormat("dd-MM HH:mm", Locale.getDefault());
-      String formattedTime = sdf.format(new Date(currentTimeMillis));
-
-      States currentState = StateLiveData.getState().getValue();
-      if (currentState != null)
-      {
-        events.add(formattedTime + " " + currentState);
-      }
+      StateLiveData.setState((int) value, time);
     }
     catch (Exception e)
     {

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginBottom="10dp">
+
+    <TextView
+        android:id="@+id/stateView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/msg_border"
+        android:backgroundTint="@color/food_10"
+        android:fontFamily="@font/roboto_mono_medium"
+        android:gravity="center"
+        android:text="Night Mode"
+        android:textAllCaps="false"
+        android:textColor="@color/black_10"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/timeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/msg_border"
+        android:backgroundTint="@color/water_10"
+        android:fontFamily="@font/roboto_mono"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="5dp"
+        android:text="19:02:11 - 20/11/23"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        android:textStyle="normal" />
+
+</RelativeLayout>

@@ -2,45 +2,16 @@ package soa.project.smartfishbowl.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.animation.AnimationUtils;
-import android.widget.ScrollView;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import soa.project.smartfishbowl.R;
-import soa.project.smartfishbowl.networking.MqttHandler;
+import soa.project.smartfishbowl.state_machine.StateAdapter;
 
 public class NotificationsActivity extends AppCompatActivity
 {
-  private final Handler handler = new Handler();
-  private TextView logger;
-  private ScrollView scrollView;
-  private MqttHandler mqttHandler;
-  // Runnable para la actualización periódica
-  private final Runnable actualizarDatosRunnable = new Runnable()
-  {
-    @Override
-    public void run()
-    {
-      try
-      {
-        // Actualiza el TextView
-        logger.setText(String.join("\n", mqttHandler.getEvents()));
-
-        // Desplaza automáticamente hacia abajo
-        scrollView.post(() -> scrollView.fullScroll(ScrollView.FOCUS_DOWN));
-      }
-      catch (Exception e)
-      {
-        e.printStackTrace();
-      }
-      // Programa la próxima ejecución después de un intervalo
-      handler.postDelayed(this, 1000); // 1000 milisegundos (1 segundo)
-    }
-  };
-
   @Override
   protected void onCreate(Bundle savedInstanceState)
   {
@@ -56,6 +27,7 @@ public class NotificationsActivity extends AppCompatActivity
       startActivity(intent);
       finish();
     });
+
     findViewById(R.id.actionsButton).setOnClickListener(v ->
     {
       Intent intent = new Intent(NotificationsActivity.this, ActionsActivity.class);
@@ -88,19 +60,7 @@ public class NotificationsActivity extends AppCompatActivity
       }
     }
 
-    scrollView = findViewById(R.id.scrollView);
-    logger = findViewById(R.id.logger);
-    mqttHandler = MqttHandler.getInstance();
-
-    // Inicia la tarea de actualización
-    handler.post(actualizarDatosRunnable);
-  }
-
-  @Override
-  protected void onDestroy()
-  {
-    super.onDestroy();
-    // Detén el handler cuando la actividad se destruye
-    handler.removeCallbacks(actualizarDatosRunnable);
+    RecyclerView recyclerView = findViewById(R.id.recycler);
+    recyclerView.setAdapter(StateAdapter.getInstance(this, getApplicationContext()));
   }
 }

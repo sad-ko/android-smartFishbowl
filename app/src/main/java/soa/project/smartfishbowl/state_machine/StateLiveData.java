@@ -20,12 +20,12 @@ public class StateLiveData
     return state;
   }
 
-  public static void setState(Integer value)
+  public static void setState(Integer value, String time)
   {
     if (state == null)
     {
       state = new MutableLiveData<>(States.INIT);
     }
-    state.postValue(States.toEnum(value));
+    state.postValue(States.toEnum(value, time));
   }
 }

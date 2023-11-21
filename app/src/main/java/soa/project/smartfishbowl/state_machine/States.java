@@ -1,9 +1,11 @@
 package soa.project.smartfishbowl.state_machine;
 
-import androidx.annotation.NonNull;
+import android.content.Context;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import soa.project.smartfishbowl.R;
 
 /**
  * Estados que recibe desde la pecera.
@@ -29,6 +31,7 @@ public enum States
   }
 
   private final int value;
+  public String time;
 
   States(Integer value)
   {
@@ -38,24 +41,25 @@ public enum States
   /**
    * Mapeo del valor recibido con el estado correspondiente.
    */
-  public static States toEnum(Integer value)
+  public static States toEnum(Integer value, String time)
   {
-    return map.get(value);
+    States tmp = map.get(value);
+    assert tmp != null;
+    tmp.time = time;
+    return tmp;
   }
 
-  @NonNull
-  @Override
-  public String toString()
+  public String toString(Context context)
   {
     return switch (this)
             {
-              case INIT -> "Init";
-              case IDLE -> "Idle";
-              case IDLE_NIGHT -> "Night Mode";
-              case IDLE_MANUAL -> "Manual Mode";
-              case LOW_ON_WATER -> "Low on Water";
-              case DRAWING_WATER -> "Drawing Water";
-              case FEEDING_FISHES -> "Feeding Fishes";
+              case INIT -> context.getString(R.string.state_init);
+              case IDLE -> context.getString(R.string.state_idle);
+              case IDLE_NIGHT -> context.getString(R.string.state_night);
+              case IDLE_MANUAL -> context.getString(R.string.state_manual);
+              case LOW_ON_WATER -> context.getString(R.string.state_low);
+              case DRAWING_WATER -> context.getString(R.string.state_clean);
+              case FEEDING_FISHES -> context.getString(R.string.state_feed);
             };
   }
 }

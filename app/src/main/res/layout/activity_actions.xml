@@ -47,7 +47,7 @@
                 android:height="69dp"
                 android:backgroundTint="@color/water_10"
                 android:gravity="center"
-                android:text="Feed Fishes"
+                android:text="@string/button_feeder"
                 android:textColor="@color/white_10"
                 android:textSize="24sp"
                 tools:ignore="HardcodedText" />
@@ -64,7 +64,7 @@
                 android:height="69dp"
                 android:backgroundTint="@color/green_10"
                 android:gravity="center"
-                android:text="Clean Tank"
+                android:text="@string/button_clean"
                 android:textColor="@color/white_10"
                 android:textSize="24sp"
                 tools:ignore="HardcodedText" />
@@ -81,7 +81,7 @@
                 android:height="69dp"
                 android:backgroundTint="@color/red_10"
                 android:gravity="center"
-                android:text="Switch Lights"
+                android:text="@string/button_lights"
                 android:textColor="@color/white_10"
                 android:textSize="24sp"
                 tools:ignore="HardcodedText" />
@@ -150,12 +150,11 @@
                                 android:layout_gravity="center|bottom"
                                 android:layout_marginBottom="10dp"
                                 android:fontFamily="@font/roboto_mono"
-                                android:text="Notifications"
+                                android:text="@string/nav_notif"
                                 android:textAlignment="center"
                                 android:textAllCaps="false"
                                 android:textSize="12sp"
-                                android:textStyle="normal"
-                                tools:ignore="HardcodedText" />
+                                android:textStyle="normal" />
 
                             <Button
                                 android:id="@+id/notifButton"
@@ -193,12 +192,12 @@
                                 android:layout_gravity="center|bottom"
                                 android:layout_marginBottom="10dp"
                                 android:fontFamily="@font/roboto_mono"
-                                android:text="Home"
+                                android:text="@string/nav_home"
                                 android:textAlignment="center"
                                 android:textAllCaps="false"
                                 android:textSize="12sp"
                                 android:textStyle="normal"
-                                tools:ignore="HardcodedText,VisualLintOverlap" />
+                                tools:ignore="VisualLintOverlap" />
 
                             <Button
                                 android:id="@+id/homeButton"
@@ -236,12 +235,12 @@
                                 android:layout_gravity="center|bottom"
                                 android:layout_marginBottom="10dp"
                                 android:fontFamily="@font/roboto_mono_medium"
-                                android:text="Actions"
+                                android:text="@string/nav_actions"
                                 android:textAlignment="center"
                                 android:textAllCaps="false"
                                 android:textSize="12sp"
                                 android:textStyle="bold"
-                                tools:ignore="HardcodedText,VisualLintOverlap" />
+                                tools:ignore="VisualLintOverlap" />
 
                             <Button
                                 android:id="@+id/actionsButton"

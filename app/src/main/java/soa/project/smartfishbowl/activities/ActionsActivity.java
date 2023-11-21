@@ -6,10 +6,14 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 import soa.project.smartfishbowl.R;
 import soa.project.smartfishbowl.networking.MqttHandler;
@@ -18,7 +22,7 @@ import soa.project.smartfishbowl.state_machine.Events;
 public class ActionsActivity extends AppCompatActivity implements SensorEventListener
 {
   private static final String topic = "/v2.0/devices/android-smart-fishbowl/send-event";
-  private static final Integer umbral = 12;
+  private static final float umbral = 30;
   private SensorManager mSensorManager;
 
   @Override
@@ -36,6 +40,7 @@ public class ActionsActivity extends AppCompatActivity implements SensorEventLis
       startActivity(intent);
       finish();
     });
+
     findViewById(R.id.notifButton).setOnClickListener(v ->
     {
       Intent intent = new Intent(ActionsActivity.this, NotificationsActivity.class);
@@ -129,9 +134,20 @@ public class ActionsActivity extends AppCompatActivity implements SensorEventLis
         if ((event.values[0] > umbral) || (event.values[1] > umbral) || (event.values[2] > umbral))
         {
           mqttHandler.publish(topic, Events.SWITCH_LIGHTS.value);
-          Toast.makeText(
-                          getApplicationContext(), "Umbral superado por el acelerometro", Toast.LENGTH_LONG)
-                  .show();
+          Toast.makeText(getApplicationContext(), R.string.sensor, Toast.LENGTH_SHORT).show();
+
+          // Detenemos los sensores por un tiempo para evitar el constante spameo.
+          pararSensores();
+          new Timer().schedule(new TimerTask()
+          {
+            @Override
+            public void run()
+            {
+              Log.i("ubidots", "....");
+              iniSensores();
+              cancel();
+            }
+          }, 2000);
         }
       }
     }

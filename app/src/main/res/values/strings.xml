@@ -17,4 +17,22 @@
     <string name="action_feeder">Starting feeder…</string>
     <string name="action_cleaner">Starting pump…</string>
     <string name="action_lights">Switching lights…</string>
+    <!-- Actions Buttons -->
+    <string name="button_feeder">Feed Fishes</string>
+    <string name="button_clean">Clean Tank</string>
+    <string name="button_lights">Switch Lights</string>
+    <!-- Navigation Buttons -->
+    <string name="nav_notif">Notifications</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_actions">Actions</string>
+    <!-- States -->
+    <string name="state_init">Init</string>
+    <string name="state_idle">Idle</string>
+    <string name="state_night">Night Mode</string>
+    <string name="state_manual">Manual Mode</string>
+    <string name="state_low">Low on Water</string>
+    <string name="state_clean">Drawing Water</string>
+    <string name="state_feed">Feeding Fishes</string>
+    <!-- Toasts -->
+    <string name="sensor">Sensor detected! Switching lights…</string>
 </resources>
