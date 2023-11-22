@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import soa.project.smartfishbowl.R;
 import soa.project.smartfishbowl.networking.MqttHandler;
+import soa.project.smartfishbowl.state_machine.StateAdapter;
 import soa.project.smartfishbowl.state_machine.StateLiveData;
 import soa.project.smartfishbowl.state_machine.States;
 import soa.project.smartfishbowl.state_machine.TankState;

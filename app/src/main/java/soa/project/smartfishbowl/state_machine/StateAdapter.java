@@ -19,7 +19,7 @@ public class StateAdapter extends RecyclerView.Adapter<StateViewHolder>
 {
   @SuppressLint("StaticFieldLeak")
   private static volatile StateAdapter instance;
-  private final List<States> messages = new ArrayList<>();
+  private static final List<States> messages = new ArrayList<>();
   private final Context context;
 
   private StateAdapter(LifecycleOwner owner, Context context)
@@ -54,6 +54,14 @@ public class StateAdapter extends RecyclerView.Adapter<StateViewHolder>
         instance = new StateAdapter(owner, context.getApplicationContext());
       }
       return instance;
+    }
+  }
+
+  public static void addMessage(States newState)
+  {
+    if (newState != States.INIT)
+    {
+      messages.add(newState);
     }
   }
 

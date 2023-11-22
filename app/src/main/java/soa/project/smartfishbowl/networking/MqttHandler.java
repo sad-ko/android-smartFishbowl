@@ -15,6 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import soa.project.smartfishbowl.state_machine.StateAdapter;
 import soa.project.smartfishbowl.state_machine.StateLiveData;
 
 /**
@@ -101,6 +102,7 @@ public final class MqttHandler implements MqttCallback
       String time = sdf.format(new Date(System.currentTimeMillis()));
 
       StateLiveData.setState((int) value, time);
+      StateAdapter.addMessage(StateLiveData.getState().getValue());
     }
     catch (Exception e)
     {

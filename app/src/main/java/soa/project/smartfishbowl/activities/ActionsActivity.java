@@ -22,7 +22,7 @@ import soa.project.smartfishbowl.state_machine.Events;
 public class ActionsActivity extends AppCompatActivity implements SensorEventListener
 {
   private static final String topic = "/v2.0/devices/android-smart-fishbowl/send-event";
-  private static final float umbral = 30;
+  private static final float umbral = 15;
   private SensorManager mSensorManager;
 
   @Override
